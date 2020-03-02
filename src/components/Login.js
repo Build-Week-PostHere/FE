@@ -8,7 +8,7 @@ const SignUp = () => {
     }
 
     return(
-        <div class='login-container'>
+        <div className='login-container'>
             <h2>Log In</h2>
             <form>
                 <input type='email' name='email' placeholder='Email' value={email} onChange={handleChange}/>
