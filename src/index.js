@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import thunk from 'redux-thunk'
 
-import './index.css';
+import './css/index.css';
 import App from './App';
 import { reducer } from './reducers'
 
