@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Post = () => {
+const PostForm = () => {
    return (
       <div>
-         Post
+         Form
       </div>
    );
 }
 
-export default Post;
+export default PostForm;
