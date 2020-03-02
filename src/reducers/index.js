@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux'
 
-export const reducer = combineReducers({
+import { loginReducer } from './loginReducer'
+import { crudReducer } from './crudReducer'
+import { editReducer } from './editReducer'
 
+export const reducer = combineReducers({
+   loginReducer,
+   crudReducer,
+   editReducer
 })
