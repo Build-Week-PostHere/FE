@@ -11,10 +11,12 @@ const SignUp = () => {
         <div className='login-container'>
             <h2>Log In</h2>
             <form>
-                <input type='email' name='email' placeholder='Email' value={email} onChange={handleChange}/>
-                <input type='password' name='password' placeholder='Password' value={password} onChange={handleChange}/>
-                <input type='submit'>Log In</input>
+                <input type='email' name='email' placeholder='Email' value={member.email} onChange={handleChange}/>
+                <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange}/>
+                <input type='submit' value='Log In' />
             </form>
         </div>
     )
 }
+
+export default SignUp;
