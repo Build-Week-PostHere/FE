@@ -28,7 +28,7 @@ export const login = user => dispatch => {
       .post(`/login`, user)
       .then(res => {
          console.log(res)
-         dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload })
+         dispatch({ type: LOGIN_SUCCESS, payload: res.data.token })
       })
       .catch(err => {
          console.log(err)
