@@ -1,5 +1,6 @@
 const initialState = {
    isFetching: false,
+   token: '',
    error: ''
 }
 
