@@ -20,6 +20,9 @@
     h2{
         font-size: 5rem;
         top: 40%;
+        @media @tablet{
+           top: 20%;
+        }
     }
     h3{
         font-size: 3rem;
@@ -33,5 +36,12 @@
     justify-content: space-evenly;
     button{
         .orange-button();
+    }
+    @media @phone{
+        flex-direction: column;
+        align-items: center;
+        button{
+            margin-top: 5%;
+        }
     }
 }

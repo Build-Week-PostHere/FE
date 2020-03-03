@@ -37,6 +37,11 @@ button {
   font-size: 5rem;
   top: 40%;
 }
+@media (max-width: 1000px) {
+  .landing-CTA h2 {
+    top: 20%;
+  }
+}
 .landing-CTA h3 {
   font-size: 3rem;
   top: 55%;
@@ -52,6 +57,15 @@ button {
   padding: 5%;
   border: none;
   width: 300px;
+}
+@media (max-width: 600px) {
+  .landing-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .landing-buttons button {
+    margin-top: 5%;
+  }
 }
 .login-container {
   margin: 15% auto;
@@ -88,6 +102,17 @@ button {
   font-size: 2.5rem;
   margin-bottom: 0;
   color: orangered;
+}
+@media (max-width: 1000px) {
+  .login-container {
+    width: 90%;
+  }
+  .login-container form input {
+    width: 50vw;
+  }
+  .login-container form input[type='submit'] {
+    width: 80%;
+  }
 }
 .login-container.signup-container {
   height: 550px;
