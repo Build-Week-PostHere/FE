@@ -11,8 +11,9 @@ import {
 const initialState = {
    isFetching: false,
    user: {},
-   error: '',
-   registerError: ''
+   id: 0,
+   token: '',
+   error: ''
 }
 
 export const loginReducer = (state = initialState, action) => {
@@ -41,9 +42,11 @@ export const loginReducer = (state = initialState, action) => {
             isFetching: true
          }
       case LOGIN_SUCCESS:
-         window.localStorage.setItem('token', action.payload)
+         window.localStorage.setItem('token', action.payload.token)
          return {
             ...state,
+            id: action.payload.id,
+            token: action.payload.token,
             isFetching: false,
             error: ''
          }
