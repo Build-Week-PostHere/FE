@@ -1,3 +1,58 @@
+body {
+  background-image: url('../assets/memphis-mini-dark.png');
+  background-color: black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+.landing-header {
+  display: flex;
+  align-items: center;
+}
+.landing-header h1 {
+  font-size: 3rem;
+}
+.landing-CTA {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.landing-CTA svg {
+  height: 70vh;
+}
+.landing-CTA h2,
+.landing-CTA h3 {
+  position: absolute;
+}
+.landing-CTA h2 {
+  font-size: 5rem;
+  top: 40%;
+}
+.landing-CTA h3 {
+  font-size: 3rem;
+  top: 55%;
+}
+.landing-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.landing-buttons button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 2rem;
+  padding: 5%;
+  border: none;
+  width: 300px;
+}
 .login-container {
   display: flex;
   flex-direction: column;
