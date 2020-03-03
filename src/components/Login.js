@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { login } from '../actions/loginActions'
+import { login, register } from '../actions/loginActions'
 
 const SignUp = ({ user, login, isFetching, error }) => {
    const [member, setMember] = useState({ username: '', password: '' })
@@ -49,4 +49,4 @@ const mapStateToProps = state => (
    }
 )
 
-export default connect(mapStateToProps, { login })(SignUp);
+export default connect(mapStateToProps, { login, register })(SignUp);
