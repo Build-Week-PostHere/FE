@@ -15,9 +15,9 @@ const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
       <div>
          <h1>Your Posts</h1>
          {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> : posts ?
-            posts.map(post => {
-               <PostCard key={post.id} post={post} />
-            }) :
+            posts.map(post => (
+               <Link to={`/posts/${post.id}`}><PostCard key={post.id} post={post} /></Link>
+            )) :
             <div>
                <h2>Add your first post!</h2>
                <Link to='/analyze'><button>Add Post</button></Link>
