@@ -8,10 +8,11 @@ const PostForm = () => {
    }
 
    return (
-      <div>
+      <div className='login-container'>
          <form>
+            <h2>Analyze Your Post</h2>
             <input type='text' name='title' placeholder='Write your title here.' value={post.title} onChange={handleChange}/><br/>
-            <textarea name='body' placeholder='Write your post here.' value={post.body} onChange={handleChange} /><br/>
+            <textarea name='body' placeholder='Write your post here.' cols='50' rows='10' value={post.body} onChange={handleChange} /><br/>
             <input type='submit' value='Submit Post' />
          </form>
       </div>
