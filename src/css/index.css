@@ -105,13 +105,32 @@ button {
 }
 @media (max-width: 1000px) {
   .login-container {
-    width: 90%;
+    width: 85%;
   }
   .login-container form input {
     width: 50vw;
   }
   .login-container form input[type='submit'] {
     width: 80%;
+  }
+}
+.login-and-back-container {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+}
+.login-and-back-container svg {
+  position: absolute;
+  left: 20%;
+}
+@media (max-width: 1000px) {
+  .login-and-back-container svg {
+    left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .login-and-back-container svg {
+    display: none;
   }
 }
 .login-container.signup-container {

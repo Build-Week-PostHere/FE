@@ -29,7 +29,7 @@
         color: orangered;
     }
     @media @tablet{
-        width: 90%;
+        width: 85%;
         form{
             input{
                 width: 50vw;
@@ -37,6 +37,22 @@
                     width: 80%;
                 }
             }
+        }
+    }
+}
+
+.login-and-back-container{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    svg{
+        position: absolute;
+        left: 20%;
+        @media @tablet{
+            left: 0;
+        }
+        @media @phone{
+            display: none;
         }
     }
 }
