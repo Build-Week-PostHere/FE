@@ -7,7 +7,7 @@ export const REGISTER_FAIL = 'REGISTER_FAIL'
 export const register = user => dispatch => {
    dispatch({ type: REGISTER })
    axiosWithAuth()
-      .post(`/register`, user)
+      .post(`/auth/register`, user)
       .then(res => {
          console.log(res)
          dispatch({ type: REGISTER_SUCCESS, payload: user })
@@ -25,7 +25,7 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 export const login = user => dispatch => {
    dispatch({ type: LOGIN })
    axiosWithAuth()
-      .post(`/login`, user)
+      .post(`/auth/login`, user)
       .then(res => {
          console.log(res)
          dispatch({ type: LOGIN_SUCCESS, payload: res.data.token })
@@ -34,4 +34,12 @@ export const login = user => dispatch => {
          console.log(err)
          dispatch({ type: LOGIN_FAIL, payload: err })
       })
+}
+
+export const LOGOUT = 'LOGOUT'
+
+export const logout = e => {
+   return {
+      type: LOGOUT
+   }
 }

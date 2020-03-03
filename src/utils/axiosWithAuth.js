@@ -6,6 +6,6 @@ export const axiosWithAuth = () => {
       headers: {
          authorization: token
       },
-      baseURL: 'https://reddit-sub-predictor.herokuapp.com/api/auth'
+      baseURL: 'https://reddit-sub-predictor.herokuapp.com/api'
    })
 }

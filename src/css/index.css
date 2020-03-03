@@ -1,4 +1,74 @@
+body {
+  background-image: url('../assets/memphis-mini-dark.png');
+  background-color: black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+.landing-header {
+  display: flex;
+  align-items: center;
+}
+.landing-header h1 {
+  font-size: 3rem;
+}
+.landing-CTA {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.landing-CTA svg {
+  height: 70vh;
+}
+.landing-CTA h2,
+.landing-CTA h3 {
+  position: absolute;
+}
+.landing-CTA h2 {
+  font-size: 5rem;
+  top: 40%;
+}
+@media (max-width: 1000px) {
+  .landing-CTA h2 {
+    top: 20%;
+  }
+}
+.landing-CTA h3 {
+  font-size: 3rem;
+  top: 55%;
+}
+.landing-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.landing-buttons button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 2rem;
+  padding: 5%;
+  border: none;
+  width: 300px;
+}
+@media (max-width: 600px) {
+  .landing-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .landing-buttons button {
+    margin-top: 5%;
+  }
+}
 .login-container {
+  margin: 15% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +89,53 @@
   padding: 5%;
   margin: 2%;
 }
+.login-container form input[type='submit'] {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 2rem;
+  padding: 5%;
+  border: none;
+  width: 300px;
+  color: white;
+}
 .login-container h2 {
   font-size: 2.5rem;
   margin-bottom: 0;
   color: orangered;
+}
+@media (max-width: 1000px) {
+  .login-container {
+    width: 85%;
+  }
+  .login-container form input {
+    width: 50vw;
+  }
+  .login-container form input[type='submit'] {
+    width: 80%;
+  }
+}
+.login-and-back-container {
+  display: flex;
+  align-items: center;
+  height: 70vh;
+}
+.login-and-back-container svg {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+}
+@media (max-width: 1000px) {
+  .login-and-back-container svg {
+    left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .login-and-back-container svg {
+    display: none;
+  }
+}
+.login-container.signup-container {
+  height: 550px;
+  justify-content: space-evenly;
+  margin: 10% auto;
 }
