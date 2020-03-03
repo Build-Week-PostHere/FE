@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { logout } from '../actions/loginActions'
@@ -20,7 +21,7 @@ const PostOrSave = ({ logout }) => {
          <div className='saved-or-post-container'>
             <div className='saved-or-post-sub-container'>
                <h2>Analyze a Post</h2>
-               <img src={analytics} alt='Analytics'/>
+               <img src={analytics} alt='Analytics' />
                <p>Tell us what you want to post and we'll tell you where to post it.</p>
             </div>
             <div className='saved-or-post-sub-container'>
