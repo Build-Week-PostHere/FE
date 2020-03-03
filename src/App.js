@@ -8,14 +8,14 @@ import SignUp from './components/SignUp'
 import PostOrSave from './components/PostOrSave'
 import SavedPosts from './components/SavedPosts'
 import PostForm from './components/PostForm'
-import Post from './components/Post';
+import Post from './components/Post'
 
 function App() {
    return (
       <div className="App">
          <Route exact path='/' component={LandingPage} />
          <Route path='/login' component={Login} />
-         <Route path='/sign-up' component={SignUp} />
+         <Route path='/register' component={SignUp} />
 
          <PrivateRoute exact path='/home' component={PostOrSave} />
          <PrivateRoute exact path='/posts' component={SavedPosts} />
