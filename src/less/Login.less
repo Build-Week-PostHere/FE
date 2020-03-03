@@ -1,4 +1,5 @@
 .login-container{
+    margin: 15% auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +17,43 @@
             width: 20vw;
             padding: 5%;
             margin: 2%;
+            &[type='submit']{
+                .orange-button();
+                color: white;
+            }
         }
     }
     h2{
         font-size: 2.5rem;
         margin-bottom: 0;
         color: orangered;
+    }
+    @media @tablet{
+        width: 85%;
+        form{
+            input{
+                width: 50vw;
+                &[type='submit']{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+.login-and-back-container{
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    svg{
+        position: absolute;
+        left: 20%;
+        top: 40%;
+        @media @tablet{
+            left: 0;
+        }
+        @media @phone{
+            display: none;
+        }
     }
 }
