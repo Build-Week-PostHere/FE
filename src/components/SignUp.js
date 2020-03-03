@@ -9,21 +9,26 @@ import AlienLogo from '../assets/AlienLogo';
 import BackButton from '../assets/BackButton';
 
 const SignUp = ({ register, isFetching, error }) => {
-   const [member, setMember] = useState({ username: '', password: '', confirmPass: '' })
+   const [member, setMember] = useState({ username: '', password: '' })
+   const [confirmPass, setConfirmPass] = useState('')
    const [passMatch, setPassMatch] = useState(false)
    const history = useHistory()
 
-   const handleChange = event => {
-      setMember({ ...member, [event.target.name]: event.target.value })
+   const handleChange = e => {
+      if (e.target.name !== 'confirmPass') {
+         setMember({ ...member, [e.target.name]: e.target.value })
+      } else {
+         setConfirmPass(e.target.value)
+      }
    }
 
    const handleSubmit = e => {
       e.preventDefault()
       setPassMatch(false)
-      const { password, confirmPass } = member
-      if (password === confirmPass) {
+      if (member.password === confirmPass) {
          register(member)
          history.push('/login')
+         setPassMatch(false)
       } else {
          setPassMatch(true)
       }
@@ -49,7 +54,7 @@ const SignUp = ({ register, isFetching, error }) => {
                <form onSubmit={handleSubmit}>
                   <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} /><br />
                   <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} /><br />
-                  <input type='password' name='confirmPass' placeholder='Confirm Password' value={member.confirmPass} onChange={handleChange} /><br />
+                  <input type='password' name='confirmPass' placeholder='Confirm Password' value={confirmPass} onChange={handleChange} /><br />
                   <input type='submit' value='Sign Up' />
                </form>
             </div>
