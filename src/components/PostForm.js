@@ -35,12 +35,12 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, user, error, isFet
    }
 
    return (
-      <div>
+      <div className='login-container'>
          {isFetching ? <h1>Analyzing...</h1> :
             <form onSubmit={handleSubmit} >
                {error ? <h2>Submission Error</h2> : ''}
                <input type='text' name='post_title' placeholder='Write your title here.' value={post.post_title} onChange={handleChange} /><br />
-               <textarea name='post_text' placeholder='Write your post here.' value={post.post_text} onChange={handleChange} /><br />
+               <textarea name='post_text' placeholder='Write your post here.' cols='50' rows='10' value={post.post_text} onChange={handleChange} /><br />
                <input type='submit' value={isEditing ? 'Edit Post' : 'Submit Post'} />
             </form>
          }
