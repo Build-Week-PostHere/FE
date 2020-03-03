@@ -117,11 +117,13 @@ button {
 .login-and-back-container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 90vh;
 }
 .login-and-back-container svg {
   position: absolute;
   left: 20%;
+  top: 40%;
 }
 @media (max-width: 1000px) {
   .login-and-back-container svg {
