@@ -19,7 +19,7 @@ function App() {
 
          <PrivateRoute exact path='/home' component={PostOrSave} />
          <PrivateRoute exact path='/posts' component={SavedPosts} />
-         <Route exact path='/analyze' component={PostForm} />
+         <PrivateRoute exact path='/analyze' component={PostForm} />
          <PrivateRoute exact path='/posts/:id' component={Post} />
       </div>
    );
