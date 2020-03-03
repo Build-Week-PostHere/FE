@@ -22,8 +22,8 @@ const SignUp = ({ user, login, isFetching, error }) => {
       }
    }, [user])
 
-   const handleChange = event => {
-      setMember({ ...member, [event.target.name]: event.target.value })
+   const handleChange = e => {
+      setMember({ ...member, [e.target.name]: e.target.value })
    }
 
    const handleSubmit = e => {
