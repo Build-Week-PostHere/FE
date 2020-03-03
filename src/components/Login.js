@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { login } from '../actions/loginActions'
 
 //Asset Imports
+import AlienLogo from '../assets/AlienLogo';
 import BackButton from '../assets/BackButton';
 
 const SignUp = ({ user, login, isFetching, error }) => {
@@ -36,18 +37,24 @@ const SignUp = ({ user, login, isFetching, error }) => {
    }
 
    return (
-      <div className='login-and-back-container'>
-         <div onClick={handleBack}>         
-            <BackButton />
+      <div>
+         <div className='landing-header'>
+            <AlienLogo />
+            <h1>/PostHere</h1>
          </div>
-         <div className='login-container'>
-            <h2>Log In</h2>
-            {isFetching ? <h3>Loading...</h3> : error ? <h3>Login Error, Please try again.</h3> : ''}
-            <form onSubmit={handleSubmit} >
-               <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} />
-               <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} />
-               <input type='submit' value='Log In' />
-            </form>
+         <div className='login-and-back-container'>
+            <div onClick={handleBack}>         
+               <BackButton />
+            </div>
+            <div className='login-container'>
+               <h2>Log In</h2>
+               {isFetching ? <h3>Loading...</h3> : error ? <h3>Login Error, Please try again.</h3> : ''}
+               <form onSubmit={handleSubmit} >
+                  <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} />
+                  <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} />
+                  <input type='submit' value='Log In' />
+               </form>
+            </div>
          </div>
       </div>
 
