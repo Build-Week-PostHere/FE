@@ -35,3 +35,11 @@ export const login = user => dispatch => {
          dispatch({ type: LOGIN_FAIL, payload: err })
       })
 }
+
+export const LOGOUT = 'LOGOUT'
+
+export const logout = e => {
+   return {
+      type: LOGOUT
+   }
+}

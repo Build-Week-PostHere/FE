@@ -4,12 +4,13 @@ import {
    REGISTER_FAIL,
    LOGIN,
    LOGIN_SUCCESS,
-   LOGIN_FAIL
+   LOGIN_FAIL,
+   LOGOUT
 } from '../actions/loginActions'
 
 const initialState = {
    isFetching: false,
-   token: '',
+   user: {},
    error: '',
    registerError: ''
 }
@@ -25,6 +26,7 @@ export const loginReducer = (state = initialState, action) => {
          return {
             ...state,
             isFetching: false,
+            user: action.payload,
             error: ''
          }
       case REGISTER_FAIL:
@@ -50,6 +52,11 @@ export const loginReducer = (state = initialState, action) => {
             ...state,
             isFetching: false,
             error: action.payload
+         }
+      case LOGOUT:
+         window.localStorage.removeItem('token')
+         return {
+            ...state
          }
       default:
          return state
