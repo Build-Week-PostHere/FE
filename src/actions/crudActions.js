@@ -25,7 +25,7 @@ export const GET_SPECIFIC_FAIL = 'GET_SPECIFIC_FAIL'
 export const getSpecific = (user, id) => dispatch => {
    dispatch({ type: GET_SPECIFIC_POST })
    axiosWithAuth()
-      .get(`/user/${user.id}/post/${post.id}`)
+      .get(`/user/${user.id}/post/${id}`)
       .then(res => {
          console.log(res)
          dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data })
