@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import { useParams, useHistory } from 'react-router-dom'
 
-const Post = () => {
+import { toggleEdit, setPostToEdit } from '../actions/editActions'
+import { deletePost, getSpecific } from '../actions/crudActions'
+
+const Post = ({ user, post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
+   const { post_title, post_text } = post
+   const id = useParams()
+   const history = useHistory()
+
+   useEffect(() => {
+      getSpecific(user, id)
+   }, [post])
+
+   const handleEdit = e => {
+      toggleEdit(true)
+      setPostToEdit(post)
+      history.push('/analyze')
+   }
+
+   const handleDelete = e => {
+      deletePost(user, post)
+      history.push('/home')
+   }
+
    return (
       <div>
-         Post
+         <button onClick={handleEdit}>Update Post</button>
+         <button onClick={handleDelete}>X</button>
+         <h3>{post_title}</h3>
+         <h4>{post_text}</h4>
       </div>
    );
 }
 
-export default Post;
+const mapStateToProps = state => (
+   {
+      user: state.loginReducer.user,
+      post: state.crudReducer.post
+   }
+)
+
+export default connect(mapStateToProps, { getSpecific, toggleEdit, setPostToEdit, deletePost })(Post);

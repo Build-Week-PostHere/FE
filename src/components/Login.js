@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { login, register } from '../actions/loginActions'
+import { login } from '../actions/loginActions'
 
 //Asset Imports
 import AlienLogo from '../assets/AlienLogo';
@@ -43,7 +43,7 @@ const SignUp = ({ user, login, isFetching, error }) => {
             <h1>/PostHere</h1>
          </div>
          <div className='login-and-back-container'>
-            <div onClick={handleBack}>         
+            <div onClick={handleBack}>
                <BackButton />
             </div>
             <div className='login-container'>
@@ -57,7 +57,6 @@ const SignUp = ({ user, login, isFetching, error }) => {
             </div>
          </div>
       </div>
-
    )
 }
 
@@ -69,4 +68,4 @@ const mapStateToProps = state => (
    }
 )
 
-export default connect(mapStateToProps, { login, register })(SignUp);
+export default connect(mapStateToProps, { login })(SignUp);
