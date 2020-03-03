@@ -26,7 +26,7 @@ const SignUp = ({ register, isFetching, error }) => {
    }
 
    return (
-      <div className='login-container'>
+      <div className='login-container signup-container'>
          <h2>Sign Up</h2>
          {passMatch ? <h3>Passwords Do Not Match</h3> : error ? <h3>Register Error, try with different credentials</h3> : isFetching ? <h3>Loading...</h3> : ''}
          <form onSubmit={handleSubmit}>
