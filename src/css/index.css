@@ -17,6 +17,8 @@ button {
 }
 .landing-header {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   position: absolute;
 }
@@ -25,16 +27,43 @@ button {
 }
 .landing-CTA {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
-.landing-CTA svg {
+@media (max-width: 600px) {
+  .landing-CTA {
+    flex-direction: column;
+  }
+}
+.landing-CTA img {
   height: 75vh;
   margin-top: 1%;
+  opacity: 0.6;
+}
+@media (max-width: 600px) {
+  .landing-CTA img {
+    display: none;
+  }
 }
 .landing-CTA h2,
 .landing-CTA h3 {
   position: absolute;
+  z-index: 1;
+}
+@media (max-width: 1000px) {
+  .landing-CTA h2,
+  .landing-CTA h3 {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .landing-CTA h2,
+  .landing-CTA h3 {
+    position: relative;
+    margin-top: 20%;
+    text-align: center;
+  }
 }
 .landing-CTA h2 {
   font-size: 5rem;
@@ -43,6 +72,12 @@ button {
 @media (max-width: 1000px) {
   .landing-CTA h2 {
     top: 20%;
+    margin-top: 1%;
+  }
+}
+@media (max-width: 600px) {
+  .landing-CTA h2 {
+    margin-top: 20%;
   }
 }
 .landing-CTA h3 {
@@ -52,7 +87,9 @@ button {
 .landing-buttons {
   margin-top: 10vh;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 .landing-buttons button {
   background-color: orangered;
@@ -72,12 +109,12 @@ button {
   }
 }
 .login-container {
-  margin: 10% auto;
-  padding-bottom: 25px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  margin: 10% auto;
+  padding-bottom: 25px;
   background-color: #36363681;
   width: 40%;
 }
@@ -128,47 +165,49 @@ button {
 }
 .login-and-back-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 70vh;
 }
-.login-and-back-container svg {
+.login-and-back-container img {
   position: absolute;
   left: 20%;
   top: 30%;
 }
 @media (max-width: 1000px) {
-  .login-and-back-container svg {
+  .login-and-back-container img {
     left: 0;
   }
 }
 @media (max-width: 600px) {
-  .login-and-back-container svg {
+  .login-and-back-container img {
     display: none;
   }
 }
 .home-header {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.home-header svg {
-  width: 3%;
-  margin-right: 0.5%;
+  position: absolute;
+  top: 40px;
+  left: 50%;
 }
 .saved-or-post-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 5%;
+  align-items: center;
+  margin-top: 10%;
 }
 .saved-or-post-container .saved-or-post-sub-container {
-  background-color: #36363681;
-  width: 30%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-.saved-or-post-container .saved-or-post-sub-container img {
-  width: 50%;
+  background-color: #36363681;
+  width: 30%;
 }
 .saved-or-post-container .saved-or-post-sub-container h2 {
   font-size: 2rem;
@@ -178,18 +217,34 @@ button {
   text-align: center;
   font-size: 1.2rem;
 }
-.logout-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.saved-or-post-container .inner-button {
   background-color: orangered;
-  width: 10%;
   border-radius: 44px;
+  font-size: 1.5rem;
+  padding: 3.5%;
+  border: none;
+  width: 300px;
+  margin-bottom: 10%;
+}
+.logout-button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 1.5rem;
+  padding: 3.5%;
+  border: none;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 15px;
+  left: 15px;
+  padding: 0.5%;
+  width: 15%;
 }
-.logout-button p {
-  margin-right: 10%;
+.logout-button img {
+  margin-left: 5%;
 }
 .login-container.signup-container {
   height: 550px;

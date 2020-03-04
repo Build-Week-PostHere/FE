@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { getPosts } from '../actions/crudActions'
 
 import PostCard from './PostCard'
+import Header from './Header'
 
 const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
    useEffect(() => {
@@ -13,6 +14,9 @@ const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
 
    return (
       <div>
+         <div className='home-header'>
+            <Header />
+         </div>
          <h1>Your Posts</h1>
          {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> : posts ?
             posts.map(post => (
