@@ -30,8 +30,6 @@ const PostOrSave = ({ logout }) => {
                <p>Look back on posts you've already had analyzed.</p>
             </div>
          </div>
-         <Link to='/analyze'><button >Analyze</button></Link>
-         <Link to='/posts'><button >Saved</button></Link>
          <Logout onClick={logout}>Logout</Logout>
       </div>
    );

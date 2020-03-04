@@ -50,8 +50,8 @@ const SignUp = ({ user, login, isFetching, error }) => {
                <h2>Log In</h2>
                {isFetching ? <h3>Loading...</h3> : error ? <h3>Login Error, Please try again.</h3> : ''}
                <form onSubmit={handleSubmit} >
-                  <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} />
-                  <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} />
+                  <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} required />
+                  <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} required />
                   <input type='submit' value='Log In' />
                </form>
             </div>
