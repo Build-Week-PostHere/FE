@@ -43,7 +43,7 @@ const PostOrSave = ({ logout }) => {
             </div>
          </div>
          <Link to='/'>
-            <button onClick={logout} class='logout-button'>
+            <button onClick={logout} className='logout-button'>
                Log Out
                <img src={exit} alt='' />
             </button>
