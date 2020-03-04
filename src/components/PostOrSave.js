@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 
 import { logout } from '../actions/loginActions'
 
+//Component Imports
+import Header from './Header';
+
 //Asset Imports
 import alienLogo from '../assets/alienlogo.svg';
 import exit from '../assets/exit.svg'
@@ -15,8 +18,7 @@ const PostOrSave = ({ logout }) => {
    return (
       <div>
          <div className='home-header'>
-            <img src={alienLogo} alt='Reddit Logo' />
-            <h1>/PostHere</h1>
+            <Header/>
          </div>
          <div className='saved-or-post-container'>
             <div className='saved-or-post-sub-container'>

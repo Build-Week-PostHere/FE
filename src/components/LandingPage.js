@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-//Asset Imports
-import alienLogo from '../assets/alienlogo.svg';
+//Component Imports
+import Header from './Header';
+
+//Asset Import
 import alienOverlay from '../assets/alienoverlay.svg';
+
 
 const LandingPage = () => {
    return (
       <div>
-         <div className='landing-header'>
-            <img src={alienLogo} alt='Reddit Logo'/>
-            <h1>/PostHere</h1>
-         </div>
+         <Header />
          <div className='landing-CTA'>
             <h2>Reach The Right People</h2>
             <h3>Use Machine Learning To Find The Right Subreddit For Your Post</h3>

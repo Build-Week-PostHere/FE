@@ -4,8 +4,10 @@ import { connect } from 'react-redux'
 
 import { login } from '../actions/loginActions'
 
+//Component Imports
+import Header from './Header';
+
 //Asset Imports
-import alienLogo from '../assets/alienlogo.svg';
 import backButton from '../assets/backButton.svg'
 
 const SignUp = ({ user, login, isFetching, error }) => {
@@ -38,10 +40,7 @@ const SignUp = ({ user, login, isFetching, error }) => {
 
    return (
       <div>
-         <div className='landing-header'>
-            <img src={alienLogo} alt='Reddit Logo'/>
-            <h1>/PostHere</h1>
-         </div>
+         <Header />
          <div className='login-and-back-container'>
                <img src={backButton} alt='Go Back' onClick={handleBack}/>
                <div className='login-container'>

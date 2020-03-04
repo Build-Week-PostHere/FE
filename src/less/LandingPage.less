@@ -1,6 +1,5 @@
 .landing-header{
-    display: flex;
-    align-items: center;
+    .customFlex();
     position: absolute;
     h1{
         font-size: 2.5rem;
@@ -8,23 +7,39 @@
 }
 
 .landing-CTA{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    .customFlex();
+    @media @phone{
+        flex-direction: column;
+    }
     img{
         height: 75vh;
         margin-top: 1%;
         opacity: .6;
+        @media @phone{
+            display: none;
+        }
     }
     h2, h3{
         position: absolute;
         z-index: 1;
+        @media @tablet{
+            text-align: center;
+        }
+        @media @phone{
+            position: relative;
+            margin-top: 20%;
+            text-align: center;
+        }
     }
     h2{
         font-size: 5rem;
         top: 35%;
         @media @tablet{
            top: 20%;
+           margin-top: 1%;
+        }
+        @media @phone{
+            margin-top: 20%;
         }
     }
     h3{
@@ -36,8 +51,7 @@
 
 .landing-buttons{
     margin-top: 10vh;
-    display: flex;
-    justify-content: space-evenly;
+    .customFlex(@justify:space-evenly);
     button{
         .orange-button();
     }
