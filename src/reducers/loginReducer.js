@@ -13,7 +13,8 @@ const initialState = {
    user: {},
    id: 0,
    token: '',
-   error: ''
+   error: '',
+   regiError: ''
 }
 
 export const loginReducer = (state = initialState, action) => {
@@ -28,13 +29,13 @@ export const loginReducer = (state = initialState, action) => {
             ...state,
             isFetching: false,
             user: action.payload,
-            error: ''
+            regiError: ''
          }
       case REGISTER_FAIL:
          return {
             ...state,
             isFetching: false,
-            error: action.payload
+            regiError: action.payload
          }
       case LOGIN:
          return {
@@ -42,6 +43,7 @@ export const loginReducer = (state = initialState, action) => {
             isFetching: true
          }
       case LOGIN_SUCCESS:
+         window.localStorage.setItem('id', action.payload.id)
          window.localStorage.setItem('token', action.payload.token)
          return {
             ...state,
@@ -57,6 +59,7 @@ export const loginReducer = (state = initialState, action) => {
             error: action.payload
          }
       case LOGOUT:
+         window.localStorage.removeItem('id')
          window.localStorage.removeItem('token')
          return {
             ...state
