@@ -28,13 +28,15 @@ button {
   justify-content: center;
   text-align: center;
 }
-.landing-CTA svg {
+.landing-CTA img {
   height: 75vh;
   margin-top: 1%;
+  opacity: 0.6;
 }
 .landing-CTA h2,
 .landing-CTA h3 {
   position: absolute;
+  z-index: 1;
 }
 .landing-CTA h2 {
   font-size: 5rem;
@@ -131,18 +133,18 @@ button {
   align-items: center;
   height: 70vh;
 }
-.login-and-back-container svg {
+.login-and-back-container img {
   position: absolute;
   left: 20%;
   top: 30%;
 }
 @media (max-width: 1000px) {
-  .login-and-back-container svg {
+  .login-and-back-container img {
     left: 0;
   }
 }
 @media (max-width: 600px) {
-  .login-and-back-container svg {
+  .login-and-back-container img {
     display: none;
   }
 }

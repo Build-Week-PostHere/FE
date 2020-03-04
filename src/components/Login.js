@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { login } from '../actions/loginActions'
 
 //Asset Imports
-import AlienLogo from '../assets/AlienLogo';
-import BackButton from '../assets/BackButton';
+import alienLogo from '../assets/alienlogo.svg';
+import backButton from '../assets/backButton.svg'
 
 const SignUp = ({ user, login, isFetching, error }) => {
    const [member, setMember] = useState({ username: '', password: '' })
@@ -39,14 +39,12 @@ const SignUp = ({ user, login, isFetching, error }) => {
    return (
       <div>
          <div className='landing-header'>
-            <AlienLogo />
+            <img src={alienLogo} alt='Reddit Logo'/>
             <h1>/PostHere</h1>
          </div>
          <div className='login-and-back-container'>
-            <div onClick={handleBack}>
-               <BackButton />
-            </div>
-            <div className='login-container'>
+               <img src={backButton} alt='Go Back' onClick={handleBack}/>
+               <div className='login-container'>
                <h2>Log In</h2>
                {isFetching ? <h3>Loading...</h3> : error ? <h3>Login Error, Please try again.</h3> : ''}
                <form onSubmit={handleSubmit} >

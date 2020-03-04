@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { logout } from '../actions/loginActions'
 
 //Asset Imports
-import AlienLogo from '../assets/AlienLogo';
+import alienLogo from '../assets/alienlogo.svg';
 import exit from '../assets/exit.svg'
 import analytics from '../assets/analytics.svg';
 import save from '../assets/save.svg';
@@ -15,7 +15,7 @@ const PostOrSave = ({ logout }) => {
    return (
       <div>
          <div className='home-header'>
-            <AlienLogo />
+            <img src={alienLogo} alt='Reddit Logo' />
             <h1>/PostHere</h1>
          </div>
          <div className='saved-or-post-container'>
