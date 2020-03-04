@@ -179,17 +179,32 @@ button {
   font-size: 1.2rem;
 }
 .logout-button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 1.5rem;
+  padding: 3.5%;
+  border: none;
+  width: 300px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 0.5%;
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: orangered;
-  width: 10%;
-  border-radius: 44px;
-  position: absolute;
-  bottom: 15px;
 }
-.logout-button p {
-  margin-right: 10%;
+.logout-button img {
+  margin-left: 5%;
+}
+.inner-button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 1.5rem;
+  padding: 3.5%;
+  border: none;
+  width: 300px;
+  margin-bottom: 10%;
 }
 .login-container.signup-container {
   height: 550px;
