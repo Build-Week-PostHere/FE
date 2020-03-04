@@ -25,10 +25,10 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, user, error, isFet
    const handleSubmit = e => {
       e.preventDefault()
       if (isEditing === false) {
-         addPost(user, post)
+         addPost(post)
          history.push(`/posts`)
       } else if (isEditing === true) {
-         editPost(user, post)
+         editPost(post)
          toggleEdit(false)
          history.push(`/posts/${post.id}`)
       }
