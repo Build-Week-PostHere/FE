@@ -18,7 +18,7 @@ const PostOrSave = ({ logout }) => {
    return (
       <div>
          <div className='home-header'>
-            <Header/>
+            <Header />
          </div>
          <div className='saved-or-post-container'>
             <div className='saved-or-post-sub-container'>
@@ -26,7 +26,7 @@ const PostOrSave = ({ logout }) => {
                <img src={analytics} alt='Analytics' />
                <p>Tell us what you want to post and we'll tell you where to post it.</p>
                <Link to='/analyze'>
-                  <button class='inner-button'> 
+                  <button class='inner-button'>
                      Analyze
                   </button>
                </Link>
@@ -36,16 +36,16 @@ const PostOrSave = ({ logout }) => {
                <img src={save} alt='Saved' />
                <p>Look back on posts you've already had analyzed.</p>
                <Link to='/posts'>
-                  <button class='inner-button'> 
+                  <button class='inner-button'>
                      Saved Posts
                   </button>
                </Link>
             </div>
          </div>
          <Link to='/'>
-            <button onClick={logout} class='logout-button'> 
-               Log Out 
-               <img src={exit} alt=''/>
+            <button onClick={logout} class='logout-button'>
+               Log Out
+               <img src={exit} alt='' />
             </button>
          </Link>
       </div>
