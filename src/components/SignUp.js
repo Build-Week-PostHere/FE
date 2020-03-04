@@ -8,7 +8,7 @@ import { register } from '../actions/loginActions'
 import alienLogo from '../assets/alienlogo.svg';
 import backButton from '../assets/backButton.svg';
 
-const SignUp = ({ register, isFetching, error }) => {
+const SignUp = ({ register, isFetching, regiError }) => {
    const [member, setMember] = useState({ username: '', password: '' })
    const [confirmPass, setConfirmPass] = useState('')
    const [passMatch, setPassMatch] = useState(false)
@@ -45,10 +45,10 @@ const SignUp = ({ register, isFetching, error }) => {
             <h1>/PostHere</h1>
          </div>
          <div className='login-and-back-container'>
-            <img src={backButton} alt='Go Back' onClick={handleBack}/>
+            <img src={backButton} alt='Go Back' onClick={handleBack} />
             <div className='login-container signup-container'>
                <h2>Sign Up</h2>
-               {passMatch ? <h3>Passwords Do Not Match</h3> : error ? <h3>Register Error, try with different credentials</h3> : isFetching ? <h3>Loading...</h3> : ''}
+               {passMatch ? <h3>Passwords Do Not Match</h3> : regiError ? <h3>Register Error, try with different credentials</h3> : isFetching ? <h3>Loading...</h3> : ''}
                <form onSubmit={handleSubmit}>
                   <input type='username' name='username' placeholder='Username' value={member.username} onChange={handleChange} required /><br />
                   <input type='password' name='password' placeholder='Password' value={member.password} onChange={handleChange} required /><br />
@@ -64,7 +64,7 @@ const SignUp = ({ register, isFetching, error }) => {
 const mapStateToProps = state => (
    {
       isFetching: state.loginReducer.isFetching,
-      error: state.loginReducer.error
+      regiError: state.loginReducer.regiError
    }
 )
 

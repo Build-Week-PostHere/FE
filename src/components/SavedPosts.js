@@ -10,7 +10,7 @@ import Header from './Header'
 const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
    useEffect(() => {
       getPosts(user)
-   }, [posts])
+   }, [])
 
    return (
       <div>
