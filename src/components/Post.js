@@ -5,14 +5,15 @@ import { useParams, useHistory } from 'react-router-dom'
 import { toggleEdit, setPostToEdit } from '../actions/editActions'
 import { deletePost, getSpecific } from '../actions/crudActions'
 
-const Post = ({ user, post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
+const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
    const { post_title, post_text } = post
-   const id = useParams()
+   const id = useParams().id
    const history = useHistory()
 
    useEffect(() => {
-      getSpecific(user, id)
-   }, [post])
+      console.log(id)
+      getSpecific(id)
+   }, [])
 
    const handleEdit = e => {
       toggleEdit(true)
@@ -21,7 +22,7 @@ const Post = ({ user, post, getSpecific, toggleEdit, setPostToEdit, deletePost }
    }
 
    const handleDelete = e => {
-      deletePost(user, post)
+      deletePost(post)
       history.push('/home')
    }
 

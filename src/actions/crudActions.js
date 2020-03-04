@@ -1,13 +1,15 @@
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
+const userId = window.localStorage.getItem('id')
+
 export const GET_POSTS = 'GET_POSTS'
 export const GET_SUCCESS = 'GET_SUCCESS'
 export const GET_FAIL = 'GET_FAIL'
 
-export const getPosts = user => dispatch => {
+export const getPosts = () => dispatch => {
    dispatch({ type: GET_POSTS })
    axiosWithAuth()
-      .get(`/user/${user.id}`)
+      .get(`/user/${userId}`)
       .then(res => {
          console.log(res)
          dispatch({ type: GET_SUCCESS, payload: res.data })
@@ -22,13 +24,14 @@ export const GET_SPECIFIC_POST = 'GET_SPECIFIC_POST'
 export const GET_SPECIFIC_SUCCESS = 'GET_SPECIFIC_SUCCESS'
 export const GET_SPECIFIC_FAIL = 'GET_SPECIFIC_FAIL'
 
-export const getSpecific = (user, id) => dispatch => {
+export const getSpecific = (id) => dispatch => {
    dispatch({ type: GET_SPECIFIC_POST })
+   console.log(userId, id)
    axiosWithAuth()
-      .get(`/user/${user.id}/post/${id}`)
+      .get(`/user/${userId}/post/${id}`)
       .then(res => {
-         console.log(res)
-         dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data })
+         console.log(res.data[0])
+         dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data[0] })
       })
       .catch(err => {
          console.log(err)
@@ -44,10 +47,10 @@ export const CRUD_FAIL = 'CRUD_FAIL'
 // export const ADD_SUCCESS = 'ADD_SUCCESS'
 // export const ADD_FAIL = 'ADD_FAIL'
 
-export const addPost = (user, post) => dispatch => {
+export const addPost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .post(`/user/${user.id}`, post)
+      .post(`/user/${userId}`, post)
       .then(res => {
          console.log(res)
          dispatch({ type: CRUD_SUCCESS })
@@ -62,10 +65,10 @@ export const addPost = (user, post) => dispatch => {
 // export const EDIT_SUCCESS = 'EDIT_SUCCESS'
 // export const EDIT_FAIL = 'EDIT_FAIL'
 
-export const editPost = (user, post) => dispatch => {
+export const editPost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .put(`/user/${user.id}/post/${post.id}`, post)
+      .put(`/user/${userId}/post/${post.id}`, post)
       .then(res => {
          console.log(res)
          dispatch({ type: CRUD_SUCCESS })
@@ -80,10 +83,10 @@ export const editPost = (user, post) => dispatch => {
 // export const DELETE_SUCCESS = 'DELETE_SUCCESS'
 // export const DELETE_FAIL = 'DELETE_FAIL'
 
-export const deletePost = (user, post) => dispatch => {
+export const deletePost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .delete(`/user/${user.id}/post/${post.id}`)
+      .delete(`/user/${userId}/post/${post.id}`)
       .then(res => {
          console.log(res)
          dispatch({ type: CRUD_SUCCESS })

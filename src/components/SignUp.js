@@ -64,7 +64,7 @@ const SignUp = ({ register, isFetching, regiError }) => {
 const mapStateToProps = state => (
    {
       isFetching: state.loginReducer.isFetching,
-      regiError: state.loginReducer.error
+      regiError: state.loginReducer.regiError
    }
 )
 
