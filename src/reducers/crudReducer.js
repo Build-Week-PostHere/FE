@@ -15,7 +15,7 @@ const initialState = {
    posts: [],
    post: {},
    isFetching: false,
-   post_id: 0,
+   post_id: '',
    error: ''
 }
 

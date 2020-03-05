@@ -20,11 +20,11 @@ const SavedPosts = ({ getPosts, posts, isFetching, error }) => {
          <div className='saved-list'>
             <h1 className='saved-h1'>Your Saved Posts</h1>
             {isFetching ? <h2 className='saved-h2' >Loading...</h2> : error ? <h2 className='saved-h2' >Encountered Error</h2> : posts &&
-               posts.map(post => (
+               posts.slice(0).reverse().map(post => (
                   <Link key={post.id} to={`/posts/${post.id}`}><PostCard post={post} /></Link>
                ))
             }
-            {posts.length < 1 &&
+            {error ? '' : posts.length < 1 &&
                <div className='no-saved'>
                   <h2 className='saved-h2' >Add your first post!</h2>
                   <Link to='/analyze'><button className='saved-button'>Add Post</button></Link>

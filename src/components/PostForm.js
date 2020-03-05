@@ -34,6 +34,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, is
       setAnalyze(true)
       setTimeout(() => {
          setAnalyze(false)
+         console.log(post_id)
          history.push(`/posts/${post_id}`)
       }, 5000)
    }
