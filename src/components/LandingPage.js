@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring'; 
+import { useSpring, animated } from 'react-spring';
 
 //Component Imports
 import Header from './Header';
@@ -17,7 +17,7 @@ const LandingPage = () => {
          <div className='landing-CTA'>
             <h2>Reach The Right People</h2>
             <h3>Use Machine Learning To Find The Right Subreddit For Your Post</h3>
-            <img src={alienOverlay} alt=''/>
+            <img src={alienOverlay} alt='' />
          </div>
          <div className='landing-buttons'>
             <Link to='/login'><button>Login</button></Link>
