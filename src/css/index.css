@@ -246,8 +246,36 @@ button {
 .logout-button img {
   margin-left: 5%;
 }
+.saved-list {
+  border: 2px solid white;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+}
 .login-container.signup-container {
   height: 550px;
   justify-content: space-evenly;
   margin: 10% auto;
+}
+.post-card {
+  width: 60vw;
+  border: 1px solid white;
+}
+.post-card h4,
+.post-card h5 {
+  color: orangered;
+}
+.post-card .post-card-div2 {
+  background: #8C8C8C;
+  width: 100%;
+  height: 10vh;
+}
+.post-card .post-card-div1 {
+  height: 5vh;
+  text-align: center;
 }
