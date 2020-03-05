@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { addPost, editPost } from '../actions/crudActions'
+import { addPost, editPost, newpostid } from '../actions/crudActions'
 import { toggleEdit } from '../actions/editActions'
+
 
 const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, isFetching }) => {
    const [post, setPost] = useState({
@@ -34,7 +35,8 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, is
       setAnalyze(true)
       setTimeout(() => {
          setAnalyze(false)
-         history.push(`/posts/${post_id}`)
+         console.log(newpostid)
+         history.push(`/posts/${newpostid}`)
       }, 5000)
    }
 

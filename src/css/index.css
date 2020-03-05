@@ -14,6 +14,7 @@ a,
 button {
   font-family: 'Poppins', sans-serif;
   color: white;
+  text-decoration: none;
 }
 .landing-header {
   display: flex;
@@ -247,7 +248,6 @@ button {
   margin-left: 5%;
 }
 .saved-list {
-  border: 2px solid white;
   width: 80%;
   margin: 0 auto;
   margin-top: 10%;
@@ -264,11 +264,12 @@ button {
 }
 .post-card {
   width: 60vw;
-  border: 1px solid white;
+  height: 20vh;
 }
 .post-card h4,
 .post-card h5 {
   color: orangered;
+  margin: 0;
 }
 .post-card .post-card-div2 {
   background: #8C8C8C;
@@ -276,6 +277,11 @@ button {
   height: 10vh;
 }
 .post-card .post-card-div1 {
-  height: 5vh;
-  text-align: center;
+  height: 3vh;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
+.post-card .post-card-div1 h4 {
+  margin: 0.5%;
 }

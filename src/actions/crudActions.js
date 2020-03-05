@@ -11,7 +11,7 @@ export const getPosts = () => dispatch => {
    axiosWithAuth()
       .get(`/user/${userId}`)
       .then(res => {
-         // console.log(res)
+         console.log(res)
          dispatch({ type: GET_SUCCESS, payload: res.data })
       })
       .catch(err => {
@@ -29,8 +29,8 @@ export const getSpecific = (id) => dispatch => {
    axiosWithAuth()
       .get(`/user/${userId}/post/${id}`)
       .then(res => {
-         // console.log(res.data[0])
-         dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data[0] })
+         // console.log(res.data)
+         dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data.post[0] })
       })
       .catch(err => {
          console.log(err)
@@ -40,9 +40,8 @@ export const getSpecific = (id) => dispatch => {
 
 export const CRUD = 'CRUD'
 export const CRUD_SUCCESS = 'CRUD_SUCCESS'
-export const CRUD_SUCCESS_SAVE = 'CRUD_SUCCESS_SAVE'
 export const CRUD_FAIL = 'CRUD_FAIL'
-
+export let newpostid
 // export const ADD_POST = 'ADD_POST'
 // export const ADD_SUCCESS = 'ADD_SUCCESS'
 // export const ADD_FAIL = 'ADD_FAIL'
@@ -52,8 +51,9 @@ export const addPost = (post) => dispatch => {
    axiosWithAuth()
       .post(`/user/${userId}`, post)
       .then(res => {
-         console.log(res)
-         dispatch({ type: CRUD_SUCCESS_SAVE, payload: res.data.id[0] })
+         newpostid = post.id
+         // console.log(res.data)
+         dispatch({ type: CRUD_SUCCESS })
       })
       .catch(err => {
          console.log(err)
@@ -70,8 +70,9 @@ export const editPost = (post) => dispatch => {
    axiosWithAuth()
       .put(`/user/${userId}/post/${post.id}`, post)
       .then(res => {
-         // console.log(res)
-         dispatch({ type: CRUD_SUCCESS_SAVE, payload: res.data.id[0] })
+         newpostid = post.id
+         // console.log(res.data)
+         dispatch({ type: CRUD_SUCCESS })
       })
       .catch(err => {
          console.log(err)
