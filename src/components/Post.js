@@ -28,8 +28,8 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
    return (
       <div>
          <h1>Suggested Subreddit: <Link to={`/subreddit/${post_sub_reddit}`}>{post_sub_reddit}</Link></h1>
-         <button onClick={handleEdit}>Update Post</button>
-         <button onClick={handleDelete}>X</button>
+         <button onClick={handleEdit} class='med-button'>Update Post</button>
+         <button onClick={handleDelete} class='small-button'>X</button>
          <h3>{post_title}</h3>
          <h4>{post_text}</h4>
       </div>

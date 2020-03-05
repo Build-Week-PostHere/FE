@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring'; 
 
 //Component Imports
 import Header from './Header';
@@ -9,8 +10,9 @@ import alienOverlay from '../assets/alienoverlay.svg';
 
 
 const LandingPage = () => {
+   const props = useSpring({config : {duration: 1000}, ...{opacity: 1, from: {opacity: 0}}})
    return (
-      <div>
+      <animated.div style={props}>
          <Header />
          <div className='landing-CTA'>
             <h2>Reach The Right People</h2>
@@ -22,7 +24,7 @@ const LandingPage = () => {
             <Link to='/register'><button>Sign Up</button></Link>
             <Link to='/'><button>Learn More</button></Link>
          </div>
-      </div>
+      </animated.div>
    );
 }
 
