@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
       <div className='post-card'>
          <div className='post-card-div1'>
             <h4>{dated}</h4>
-            <h4>{`Title:  ${post_title}`}</h4>
+            <h4>Title: {post_title}</h4>
             <h4>X</h4>
          </div>
          <div className='post-card-div2'><h5>{post_text}</h5></div>

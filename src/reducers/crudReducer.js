@@ -7,7 +7,6 @@ import {
    GET_SPECIFIC_FAIL,
    CRUD,
    CRUD_SUCCESS,
-   CRUD_SUCCESS_SAVE,
    CRUD_FAIL
 } from '../actions/crudActions'
 
@@ -66,13 +65,6 @@ export const crudReducer = (state = initialState, action) => {
          return {
             ...state,
             isFetching: false,
-            error: ''
-         }
-      case CRUD_SUCCESS_SAVE:
-         return {
-            ...state,
-            isFetching: false,
-            post_id: action.payload,
             error: ''
          }
       case CRUD_FAIL:
