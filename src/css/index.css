@@ -14,6 +14,7 @@ a,
 button {
   font-family: 'Poppins', sans-serif;
   color: white;
+  text-decoration: none;
 }
 .landing-header {
   display: flex;
@@ -185,6 +186,53 @@ button {
     display: none;
   }
 }
+.post-div {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 7%;
+  text-align: center;
+}
+.post-div .post-btn-div {
+  display: flex;
+  width: 25%;
+}
+.post-div .post-btn-div .post-btn {
+  color: orangered;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 2%;
+  cursor: pointer;
+}
+.post-div .post-top-div {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.post-div .post-top-div h3 {
+  font-size: 1.5rem;
+  color: orangered;
+}
+.post-div .post-div1,
+.post-div .post-div2 {
+  background: #8C8C8C;
+  text-align: left;
+  padding: 1% 5%;
+}
+.post-div .post-div1 h3,
+.post-div .post-div2 h3,
+.post-div .post-div1 h4,
+.post-div .post-div2 h4 {
+  color: orangered;
+}
+.post-div .post-div1 {
+  height: 7vh;
+}
+.post-div .post-div2 {
+  margin-top: 2%;
+  height: 30vh;
+}
 .home-header {
   display: flex;
   flex-direction: row;
@@ -247,7 +295,6 @@ button {
   margin-left: 5%;
 }
 .saved-list {
-  border: 2px solid white;
   width: 80%;
   margin: 0 auto;
   margin-top: 10%;
@@ -257,6 +304,14 @@ button {
   align-items: flex-start;
   align-items: center;
 }
+.saved-button {
+  background-color: orangered;
+  border-radius: 44px;
+  font-size: 1.5rem;
+  padding: 3.5%;
+  border: none;
+  width: 300px;
+}
 .login-container.signup-container {
   height: 550px;
   justify-content: space-evenly;
@@ -264,11 +319,12 @@ button {
 }
 .post-card {
   width: 60vw;
-  border: 1px solid white;
+  height: 20vh;
 }
 .post-card h4,
 .post-card h5 {
   color: orangered;
+  margin: 0;
 }
 .post-card .post-card-div2 {
   background: #8C8C8C;
@@ -276,6 +332,14 @@ button {
   height: 10vh;
 }
 .post-card .post-card-div1 {
-  height: 5vh;
+  height: 3vh;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
+.post-card .post-card-div1 h4 {
+  margin: 0.5%;
+}
+.center-text {
   text-align: center;
 }
