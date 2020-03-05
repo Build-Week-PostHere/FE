@@ -5,10 +5,10 @@ import { useHistory } from 'react-router-dom'
 import { addPost, editPost } from '../actions/crudActions'
 import { toggleEdit } from '../actions/editActions'
 
-const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching }) => {
+const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, isFetching }) => {
    const [post, setPost] = useState({
       post_title: '',
-      post_text: '',
+      post_text: ''
    });
    const history = useHistory()
    const [analyzing, setAnalyze] = useState(false)
@@ -34,11 +34,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
       setAnalyze(true)
       setTimeout(() => {
          setAnalyze(false)
-         if (isEditing === false) {
-            history.push(`/posts`)
-         } else {
-            history.push(`/posts/${post.id}`)
-         }
+         history.push(`/posts/${post_id}`)
       }, 5000)
    }
 
@@ -61,7 +57,8 @@ const mapStateToProps = state => (
       isEditing: state.editReducer.isEditing,
       postToEdit: state.editReducer.postToEdit,
       isFetching: state.crudReducer.isFetching,
-      error: state.crudReducer.error
+      error: state.crudReducer.error,
+      post_id: state.crudReducer.post_id
    }
 )
 

@@ -9,6 +9,7 @@ import PostOrSave from './components/PostOrSave'
 import SavedPosts from './components/SavedPosts'
 import PostForm from './components/PostForm'
 import Post from './components/Post'
+import Subreddit from './components/Subreddit'
 
 function App() {
    return (
@@ -20,6 +21,7 @@ function App() {
          <PrivateRoute exact path='/posts' component={SavedPosts} />
          <PrivateRoute exact path='/analyze' component={PostForm} />
          <PrivateRoute exact path='/posts/:id' component={Post} />
+         <PrivateRoute exact path='/subreddit/:name' component={Subreddit} />
       </div>
    );
 }
