@@ -1,62 +1,72 @@
+.login-container {
+   .customFlex(@direction: column, @justify: space-around);
+   margin: 10% auto;
+   padding-bottom: 25px;
+   background-color: #36363681;
+   width: 40%;
 
-.login-container{
-    .customFlex(@direction:column, @justify:space-around);
-    margin: 10% auto;
-    padding-bottom: 25px;
-    background-color: #36363681;
-    width: 40%;
-    form{
-        .customFlex(@direction:column);
-        input{
-            width: 25vw;
-            padding: 2%;
-            font-size:1.5rem;
-            margin: 2%;
-            opacity: .75;
-            &[type='submit']{
-                .orange-button();
-                color: white;
+   form {
+      .customFlex(@direction: column);
+
+      input {
+         width: 25vw;
+         padding: 2%;
+         font-size: 1.5rem;
+         margin: 2%;
+         opacity: .75;
+
+         &[type='submit'] {
+            .orange-button();
+            color: white;
+         }
+      }
+
+      textarea {
+         padding: 2%;
+         opacity: .75;
+         font-size: 1.5rem;
+         margin-top: 2.5%;
+         width: 25vw;
+      }
+   }
+
+   h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: orangered;
+   }
+
+   @media @tablet {
+      width: 85%;
+
+      form {
+         input {
+            width: 50vw;
+
+            &[type='submit'] {
+               width: 80%;
             }
-        }
-        textarea{
-            padding: 2%;
-            opacity: .75;
-            font-size: 1.5rem;
-            margin-top: 2.5%;
-            width: 25vw;
-        }
-    }
-    h2{
-        font-size: 2.5rem;
-        margin-bottom: 0;
-        color: orangered;
-    }
-    @media @tablet{
-        width: 85%;
-        form{
-            input{
-                width: 50vw;
-                &[type='submit']{
-                    width: 80%;
-                }
-            }
-        }
-    }
+         }
+      }
+   }
 }
 
-.login-and-back-container{
-    .customFlex();
-    height: 70vh;
-    img{
-        position: absolute;
-        left: 20%;
-        top: 30%;
-        @media @tablet{
-            left: 0;
-        }
-        @media @phone{
-            display: none;
-        }
-    }
-    
+.login-and-back-container {
+   .customFlex();
+   height: 70vh;
+
+   img {
+      position: absolute;
+      left: 20%;
+      top: 30%;
+
+      @media @tablet {
+         left: 0;
+      }
+
+      @media @phone {
+         display: none;
+      }
+   }
+
 }

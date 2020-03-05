@@ -17,8 +17,8 @@ const SavedPosts = ({ getPosts, posts, isFetching, error }) => {
          <div className='home-header'>
             <Header />
          </div>
-         <h1 className='saved-h1'>Your Saved Posts</h1>
          <div className='saved-list'>
+            <h1 className='saved-h1'>Your Saved Posts</h1>
             {isFetching ? <h2 className='saved-h2' >Loading...</h2> : error ? <h2 className='saved-h2' >Encountered Error</h2> : posts &&
                posts.map(post => (
                   <Link key={post.id} to={`/posts/${post.id}`}><PostCard post={post} /></Link>

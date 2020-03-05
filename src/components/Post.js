@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 
 import { toggleEdit, setPostToEdit } from '../actions/editActions'
 import { deletePost, getSpecific } from '../actions/crudActions'
 
 const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
-   const { post_title, post_text } = post
+   const { post_title, post_text, post_sub_reddit } = post
    const id = useParams().id
    const history = useHistory()
 
    useEffect(() => {
-      console.log(id)
       getSpecific(id)
    }, [])
 
@@ -28,6 +27,7 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
 
    return (
       <div>
+         <h1>Suggested Subreddit: <Link to={`/subreddit/${post_sub_reddit}`}>{post_sub_reddit}</Link></h1>
          <button onClick={handleEdit}>Update Post</button>
          <button onClick={handleDelete}>X</button>
          <h3>{post_title}</h3>
