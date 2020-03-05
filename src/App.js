@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-import { PrivateRoute } from './utils/PrivateRoute'
+import PrivateRoute from './utils/PrivateRoute'
 
 import LandingPage from './components/LandingPage'
 import Login from './components/Login'
@@ -16,7 +16,6 @@ function App() {
          <Route exact path='/' component={LandingPage} />
          <Route path='/login' component={Login} />
          <Route path='/register' component={SignUp} />
-
          <PrivateRoute exact path='/home' component={PostOrSave} />
          <PrivateRoute exact path='/posts' component={SavedPosts} />
          <PrivateRoute exact path='/analyze' component={PostForm} />

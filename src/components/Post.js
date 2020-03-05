@@ -23,7 +23,7 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
 
    const handleDelete = e => {
       deletePost(post)
-      history.push('/home')
+      history.push('/posts')
    }
 
    return (
@@ -38,7 +38,6 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
 
 const mapStateToProps = state => (
    {
-      user: state.loginReducer.user,
       post: state.crudReducer.post
    }
 )

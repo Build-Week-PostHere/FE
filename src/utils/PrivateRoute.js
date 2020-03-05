@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
-export const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
    const token = window.localStorage.getItem('token')
    return (
       <Route
@@ -16,3 +17,12 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
       />
    )
 }
+
+const mapStateToProps = state => (
+   {
+      id: state.loginReducer.id,
+      token: state.loginReducer.token
+   }
+)
+
+export default connect(mapStateToProps, {})(PrivateRoute);

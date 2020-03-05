@@ -5,12 +5,13 @@ import { useHistory } from 'react-router-dom'
 import { addPost, editPost } from '../actions/crudActions'
 import { toggleEdit } from '../actions/editActions'
 
-const PostForm = ({ addPost, editPost, isEditing, postToEdit, user, error, isFetching }) => {
+const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching }) => {
    const [post, setPost] = useState({
       post_title: '',
       post_text: '',
    });
    const history = useHistory()
+   const [analyzing, setAnalyze] = useState(false)
 
    useEffect(() => {
       if (isEditing === true) {
@@ -26,17 +27,24 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, user, error, isFet
       e.preventDefault()
       if (isEditing === false) {
          addPost(post)
-         history.push(`/posts`)
-      } else if (isEditing === true) {
+      } else {
          editPost(post)
          toggleEdit(false)
-         history.push(`/posts/${post.id}`)
       }
+      setAnalyze(true)
+      setTimeout(() => {
+         setAnalyze(false)
+         if (isEditing === false) {
+            history.push(`/posts`)
+         } else {
+            history.push(`/posts/${post.id}`)
+         }
+      }, 5000)
    }
 
    return (
       <div className='login-container'>
-         {isFetching ? <h1>Analyzing...</h1> :
+         {analyzing ? <h1>Analyzing...</h1> :
             <form onSubmit={handleSubmit} >
                {error ? <h2>Submission Error</h2> : ''}
                <input type='text' name='post_title' placeholder='Write your title here.' value={post.post_title} onChange={handleChange} required /><br />
@@ -50,7 +58,6 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, user, error, isFet
 
 const mapStateToProps = state => (
    {
-      user: state.loginReducer.user,
       isEditing: state.editReducer.isEditing,
       postToEdit: state.editReducer.postToEdit,
       isFetching: state.crudReducer.isFetching,
