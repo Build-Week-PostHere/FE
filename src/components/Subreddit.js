@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { getSubreddit } from '../actions/subredditActions'
 
-const Subreddit = ({ subreddit, subredditData, isFetching, error }) => {
+const Subreddit = ({ getSubreddit, subreddit, subredditData, isFetching, error }) => {
    // const [subreddit, setSubreddit] = useState('all');
    // const [subredditData, setSubredditData] = useState([])
 
@@ -27,7 +27,7 @@ const Subreddit = ({ subreddit, subredditData, isFetching, error }) => {
       <div>
          {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> : ''}
          <p>
-            The top post in r/{subreddit} in the past 24 hours is titled: {subredditData[0].data.title}<br />
+            The top post in r/{subreddit} in the past 24 hours is titled: {subredditData[0].data.title} <br />
             See if your post can beat it.
          </p>
       </div>
