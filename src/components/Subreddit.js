@@ -25,11 +25,12 @@ const Subreddit = ({ getSubreddit, subreddit, subredditData, isFetching, error }
 
    return (
       <div>
-         {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> : ''}
-         <p>
-            The top post in r/{subreddit} in the past 24 hours is titled: {subredditData[0].data.title} <br />
-            See if your post can beat it.
-         </p>
+         {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> :
+            <p>
+               The top post in r/{subreddit} in the past 24 hours is titled: {/* subredditData[0].data.title */} <br />
+               See if your post can beat it.
+            </p>
+         }
       </div>
    );
 }
