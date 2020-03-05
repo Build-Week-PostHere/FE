@@ -42,6 +42,7 @@ export const CRUD = 'CRUD'
 export const CRUD_SUCCESS = 'CRUD_SUCCESS'
 export const CRUD_FAIL = 'CRUD_FAIL'
 export let newpostid
+
 // export const ADD_POST = 'ADD_POST'
 // export const ADD_SUCCESS = 'ADD_SUCCESS'
 // export const ADD_FAIL = 'ADD_FAIL'
@@ -51,8 +52,8 @@ export const addPost = (post) => dispatch => {
    axiosWithAuth()
       .post(`/user/${userId}`, post)
       .then(res => {
-         newpostid = post.id
          // console.log(res.data)
+         newpostid = post.id
          dispatch({ type: CRUD_SUCCESS })
       })
       .catch(err => {
@@ -70,8 +71,8 @@ export const editPost = (post) => dispatch => {
    axiosWithAuth()
       .put(`/user/${userId}/post/${post.id}`, post)
       .then(res => {
-         newpostid = post.id
          // console.log(res.data)
+         newpostid = post.id
          dispatch({ type: CRUD_SUCCESS })
       })
       .catch(err => {
