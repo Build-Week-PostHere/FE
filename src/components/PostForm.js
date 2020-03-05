@@ -25,11 +25,11 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
    }
 
    const handleSubmit = e => {
+      e.preventDefault()
       if (post.post_title.length < 5) {
          e.preventDefault();
          alert(`Post title is only ${post.post_title.length} characters. It must be at least 5 characters.`)
       }
-      e.preventDefault()
       if (isEditing === false) {
          addPost(post)
       } else {
@@ -39,7 +39,11 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
       setAnalyze(true)
       setTimeout(() => {
          setAnalyze(false)
-         history.push(`/posts/${newpostid}`)
+         if (newpostid) {
+            history.push(`/posts/${newpostid}`)
+         } else {
+            history.push(`/posts`)
+         }
       }, 5000)
 
    }

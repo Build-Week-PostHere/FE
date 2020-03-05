@@ -53,7 +53,7 @@ export const addPost = (post) => dispatch => {
       .post(`/user/${userId}`, post)
       .then(res => {
          // console.log(res.data)
-         newpostid = post.id
+         newpostid = res.data.post_id
          dispatch({ type: CRUD_SUCCESS })
       })
       .catch(err => {
