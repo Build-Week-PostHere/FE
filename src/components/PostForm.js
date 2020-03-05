@@ -24,6 +24,10 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, is
    }
 
    const handleSubmit = e => {
+      if(post.post_title.length < 5){
+         e.preventDefault();
+         alert(`Post title is only ${post.post_title.length} characters. It must be at least 5 characters.`)
+      }
       e.preventDefault()
       if (isEditing === false) {
          addPost(post)
@@ -36,17 +40,21 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, post_id, is
          setAnalyze(false)
          history.push(`/posts/${post_id}`)
       }, 5000)
+
    }
 
    return (
       <div className='login-container'>
          {analyzing ? <h1>Analyzing...</h1> :
+         <div>
+         <h2 class='center-text'>Your Post</h2>
             <form onSubmit={handleSubmit} >
                {error ? <h2>Submission Error</h2> : ''}
                <input type='text' name='post_title' placeholder='Write your title here.' value={post.post_title} onChange={handleChange} required /><br />
                <textarea name='post_text' placeholder='Write your post here.' cols='50' rows='10' value={post.post_text} onChange={handleChange} required /><br />
                <input type='submit' value={isEditing ? 'Edit Post' : 'Submit Post'} />
             </form>
+            </div>
          }
       </div>
    );
