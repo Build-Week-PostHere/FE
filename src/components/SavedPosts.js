@@ -7,9 +7,9 @@ import { getPosts } from '../actions/crudActions'
 import PostCard from './PostCard'
 import Header from './Header'
 
-const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
+const SavedPosts = ({ getPosts, posts, isFetching, error }) => {
    useEffect(() => {
-      getPosts(user)
+      getPosts()
    }, [])
 
    return (
@@ -17,23 +17,26 @@ const SavedPosts = ({ user, getPosts, posts, isFetching, error }) => {
          <div className='home-header'>
             <Header />
          </div>
-         <h1>Your Posts</h1>
-         {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> : posts ?
-            posts.map(post => (
-               <Link to={`/posts/${post.id}`}><PostCard key={post.id} post={post} /></Link>
-            )) :
-            <div>
-               <h2>Add your first post!</h2>
-               <Link to='/analyze'><button>Add Post</button></Link>
-            </div>
-         }
+         <h1 className='saved-h1'>Your Saved Posts</h1>
+         <div className='saved-list'>
+            {isFetching ? <h2 className='saved-h2' >Loading...</h2> : error ? <h2 className='saved-h2' >Encountered Error</h2> : posts &&
+               posts.map(post => (
+                  <Link key={post.id} to={`/posts/${post.id}`}><PostCard post={post} /></Link>
+               ))
+            }
+            {posts.length < 1 &&
+               <div className='no-saved'>
+                  <h2 className='saved-h2' >Add your first post!</h2>
+                  <Link to='/analyze'><button className='saved-button'>Add Post</button></Link>
+               </div>
+            }
+         </div>
       </div>
    );
 }
 
 const mapStateToProps = state => (
    {
-      user: state.loginReducer.user,
       posts: state.crudReducer.posts,
       isFetching: state.crudReducer.isFetching,
       error: state.crudReducer.error

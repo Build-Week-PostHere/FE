@@ -31,7 +31,9 @@ const SignUp = ({ user, login, isFetching, error }) => {
    const handleSubmit = e => {
       e.preventDefault()
       login(member)
-      history.push(`/home`)
+      setTimeout(() => {
+         history.push(`/home`)
+      }, 1000)
    }
 
    const handleBack = e => {
@@ -42,8 +44,8 @@ const SignUp = ({ user, login, isFetching, error }) => {
       <div>
          <Header />
          <div className='login-and-back-container'>
-               <img src={backButton} alt='Go Back' onClick={handleBack}/>
-               <div className='login-container'>
+            <img src={backButton} alt='Go Back' onClick={handleBack} />
+            <div className='login-container'>
                <h2>Log In</h2>
                {isFetching ? <h3>Loading...</h3> : error ? <h3>Login Error, Please try again.</h3> : ''}
                <form onSubmit={handleSubmit} >
