@@ -10,7 +10,7 @@ import alienOverlay from '../assets/alienoverlay.svg';
 
 
 const LandingPage = () => {
-   const props = useSpring({config : {duration: 2500}, ...{opacity: 1, from: {opacity: 0}}})
+   const props = useSpring({ config: { duration: 2500 }, ...{ opacity: 1, from: { opacity: 0 } } })
    return (
       <animated.div style={props}>
          <Header />
@@ -20,9 +20,9 @@ const LandingPage = () => {
             <img src={alienOverlay} alt='' />
          </div>
          <div className='landing-buttons'>
-            <Link to='/login'><button>Login</button></Link>
-            <Link to='/register'><button>Sign Up</button></Link>
-            <a href='https://lambda-reddit-thingy.netlify.com'><button>Learn More</button></a>
+            <Link to='/login'><button className='land-btn'>Login</button></Link>
+            <Link to='/register'><button className='land-btn'>Sign Up</button></Link>
+            <a href='https://lambda-reddit-thingy.netlify.com'><button className='land-btn'>Learn More</button></a>
          </div>
       </animated.div>
    );
