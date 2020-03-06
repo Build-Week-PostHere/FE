@@ -58,7 +58,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
       <animated.div style={props}>
          <div className='form-and-back-container'>
             <img className='back-btn' src={backButton} alt='Go Back' onClick={handleBack} />
-            <div className='login-container'>
+            <div className='login-container analyze-div'>
                {analyzing ? <h1>Analyzing...</h1> :
                   <div>
                      <h2 className='center-text'>Your Post</h2>

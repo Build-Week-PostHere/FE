@@ -142,16 +142,22 @@ button {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 10% auto;
+  margin: 0 auto;
+  margin-top: 15%;
   padding-bottom: 25px;
   background-color: #36363681;
   width: 40%;
+  height: 60vh;
 }
 .login-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5%;
+}
+.login-container form .input-2 {
+  margin-top: 10%;
 }
 .login-container form input {
   width: 25vw;
@@ -200,20 +206,8 @@ button {
   align-items: center;
   height: 70vh;
 }
-.login-and-back-container img {
-  position: absolute;
+.login-and-back-container .back-btn {
   left: 20%;
-  top: 30%;
-}
-@media (max-width: 1000px) {
-  .login-and-back-container img {
-    left: 0;
-  }
-}
-@media (max-width: 600px) {
-  .login-and-back-container img {
-    display: none;
-  }
 }
 .post-div {
   width: 60%;
@@ -245,7 +239,7 @@ button {
 }
 .post-div .post-div1,
 .post-div .post-div2 {
-  background: #8C8C8C;
+  background: rgba(255, 255, 255, 0.85);
   text-align: left;
   padding: 1% 5%;
 }
@@ -257,6 +251,11 @@ button {
 }
 .post-div .post-div1 {
   height: 7vh;
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+.post-div .post-div1 h3 {
+  margin: 0;
 }
 .post-div .post-div2 {
   margin-top: 2%;
@@ -365,6 +364,7 @@ button {
   align-items: center;
   margin: 0 auto;
   width: 60%;
+  max-width: 800px;
   min-height: 90vh;
 }
 .saved-and-back .saved-div {
@@ -410,10 +410,11 @@ button {
   width: 200px;
   cursor: pointer;
 }
-.login-container.signup-container {
+.signup-container {
   height: 550px;
   justify-content: space-evenly;
-  margin: 10% auto;
+  margin: 0 auto;
+  margin-top: 15%;
 }
 .post-card {
   width: 60vw;
@@ -425,9 +426,12 @@ button {
   margin: 0;
 }
 .post-card .post-card-div2 {
-  background: #8C8C8C;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1%;
+  padding-left: 2%;
   width: 100%;
   height: 10vh;
+  font-size: 1.1rem;
 }
 .post-card .post-card-div1 {
   height: 3vh;
@@ -449,18 +453,10 @@ button {
   height: 70vh;
   margin-top: 8%;
 }
-.form-and-back-container img {
-  position: absolute;
+.form-and-back-container .analyze-div {
+  margin-top: 0;
+  height: 65vh;
+}
+.form-and-back-container .back-btn {
   left: 20%;
-  top: 45%;
-}
-@media (max-width: 1000px) {
-  .form-and-back-container img {
-    left: 0;
-  }
-}
-@media (max-width: 600px) {
-  .form-and-back-container img {
-    display: none;
-  }
 }
