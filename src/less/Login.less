@@ -1,12 +1,19 @@
 .login-container {
    .customFlex(@direction: column, @justify: space-around);
-   margin: 10% auto;
+   margin: 0 auto;
+   margin-top: 15%;
    padding-bottom: 25px;
    background-color: #36363681;
    width: 40%;
+   height: 60vh;
 
    form {
       .customFlex(@direction: column);
+      margin-bottom: 5%;
+
+      .input-2 {
+         margin-top: 10%;
+      }
 
       input {
          width: 25vw;
@@ -55,18 +62,8 @@
    .customFlex();
    height: 70vh;
 
-   img {
-      position: absolute;
+   .back-btn {
       left: 20%;
-      top: 30%;
-
-      @media @tablet {
-         left: 0;
-      }
-
-      @media @phone {
-         display: none;
-      }
    }
 
 }

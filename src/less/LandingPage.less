@@ -1,65 +1,105 @@
-.landing-header{
-    .customFlex();
-    position: absolute;
-    h1{
-        font-size: 2.5rem;
-    }
+.landing-header {
+   .customFlex();
+   position: absolute;
+
+   .header-img {
+      left: -40%;
+      top: 20%;
+   }
+
+   h1 {
+      font-size: 2.5rem;
+   }
 }
 
-.landing-CTA{
-    .customFlex();
-    @media @phone{
-        flex-direction: column;
-    }
-    img{
-        height: 75vh;
-        margin-top: 1%;
-        opacity: .6;
-        @media @phone{
-            display: none;
-        }
-    }
-    h2, h3{
-        position: absolute;
-        z-index: 1;
-        @media @tablet{
-            text-align: center;
-        }
-        @media @phone{
-            position: relative;
-            margin-top: 20%;
-            text-align: center;
-        }
-    }
-    h2{
-        font-size: 5rem;
-        top: 35%;
-        @media @tablet{
-           top: 20%;
-           margin-top: 1%;
-        }
-        @media @phone{
-            margin-top: 20%;
-        }
-    }
-    h3{
-        font-size: 2rem;
-        top: 50%;
+.landing-CTA {
+   .customFlex();
 
-    }
+   @media @phone {
+      flex-direction: column;
+   }
+
+   img {
+      height: 75vh;
+      margin-top: 1%;
+      opacity: .6;
+
+      @media @phone {
+         display: none;
+      }
+   }
+
+   h2,
+   h3 {
+      position: absolute;
+      z-index: 1;
+
+      @media @tablet {
+         text-align: center;
+      }
+
+      @media @phone {
+         position: relative;
+         margin-top: 20%;
+         text-align: center;
+      }
+   }
+
+   h2 {
+      font-size: 5rem;
+      top: 35%;
+
+      @media @tablet {
+         top: 20%;
+         margin-top: 1%;
+      }
+
+      @media @phone {
+         margin-top: 20%;
+      }
+   }
+
+   h3 {
+      font-size: 2rem;
+      top: 50%;
+
+   }
 }
 
-.landing-buttons{
-    margin-top: 10vh;
-    .customFlex(@justify:space-evenly);
-    button{
-        .orange-button();
-    }
-    @media @phone{
-        flex-direction: column;
-        align-items: center;
-        button{
-            margin-top: 5%;
-        }
-    }
+.landing-buttons {
+   margin-top: 10vh;
+   .customFlex(@justify: space-evenly);
+
+   button {
+      .orange-button();
+   }
+
+   @media @phone {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+         margin-top: 5%;
+      }
+   }
+}
+
+.back-btn {
+   position: absolute;
+   left: 10%;
+   top: 45%;
+   z-index: 5;
+   cursor: pointer;
+
+   @media @tablet {
+      left: 0;
+   }
+
+   @media @phone {
+      display: none;
+   }
+}
+
+.back-btn:hover {
+   width: 4%
 }

@@ -45,7 +45,7 @@ const SignUp = ({ register, isFetching, regiError }) => {
             <h1>/PostHere</h1>
          </div>
          <div className='login-and-back-container'>
-            <img src={backButton} alt='Go Back' onClick={handleBack} />
+            <img className='back-btn' src={backButton} alt='Go Back' onClick={handleBack} />
             <div className='login-container signup-container'>
                <h2>Sign Up</h2>
                {passMatch ? <h3>Passwords Do Not Match</h3> : regiError ? <h3>Register Error, try with different credentials</h3> : isFetching ? <h3>Loading...</h3> : ''}
