@@ -10,7 +10,7 @@ import alienOverlay from '../assets/alienoverlay.svg';
 
 
 const LandingPage = () => {
-   const props = useSpring({ config: { duration: 1000 }, ...{ opacity: 1, from: { opacity: 0 } } })
+   const props = useSpring({config : {duration: 2500}, ...{opacity: 1, from: {opacity: 0}}})
    return (
       <animated.div style={props}>
          <Header />
