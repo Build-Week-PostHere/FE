@@ -8,7 +8,7 @@ import { useSpring, animated } from 'react-spring';
 
 import backButton from '../assets/backButton.svg'
 
-const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching }) => {
+const PostForm = ({ addPost, editPost, isEditing, postToEdit, error }) => {
    const props = useSpring({ config: { duration: 1000 }, ...{ opacity: 1, from: { opacity: 0 } } })
    const [post, setPost] = useState({
       post_title: '',
@@ -20,6 +20,11 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
    useEffect(() => {
       if (isEditing === true) {
          setPost(postToEdit)
+      } else {
+         setPost({
+            post_title: '',
+            post_text: ''
+         });
       }
    }, [isEditing])
 
@@ -48,10 +53,20 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
             history.push(`/posts`)
          }
       }, 5000)
+      setPost({
+         post_title: '',
+         post_text: ''
+      });
    }
 
    const handleBack = e => {
+      e.preventDefault()
       history.push('/home');
+   }
+
+   const cancelEdit = e => {
+      e.preventDefault()
+      window.location.reload()
    }
 
    return (
@@ -67,6 +82,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, isFetching 
                         <input type='text' name='post_title' placeholder='Write your title here.' value={post.post_title} onChange={handleChange} required /><br />
                         <textarea name='post_text' placeholder='Write your post here.' cols='50' rows='10' value={post.post_text} onChange={handleChange} required /><br />
                         <input type='submit' value={isEditing ? 'Edit Post' : 'Submit Post'} />
+                        {isEditing ? <button onClick={cancelEdit} className='form-btn'>Cancle</button> : ''}
                      </form>
                   </div>
                }
@@ -80,7 +96,6 @@ const mapStateToProps = state => (
    {
       isEditing: state.editReducer.isEditing,
       postToEdit: state.editReducer.postToEdit,
-      isFetching: state.crudReducer.isFetching,
       error: state.crudReducer.error
    }
 )
