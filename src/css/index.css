@@ -446,6 +446,10 @@ button {
 .post-card .post-card-div1 h4 {
   margin: 0.5%;
 }
+.subreddit-div {
+  text-align: center;
+  margin-top: 20%;
+}
 .center-text {
   text-align: center;
 }
