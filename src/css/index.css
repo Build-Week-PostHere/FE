@@ -109,6 +109,9 @@ button {
   width: 300px;
   cursor: pointer;
 }
+.landing-buttons .land-btn:hover {
+  border: 1px solid white;
+}
 @media (max-width: 600px) {
   .landing-buttons {
     flex-direction: column;
