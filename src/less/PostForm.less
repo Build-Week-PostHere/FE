@@ -1,3 +1,23 @@
-.center-text{
-    text-align: center;
+.center-text {
+   text-align: center;
+}
+
+.form-and-back-container {
+   .customFlex();
+   height: 70vh;
+   margin-top: 8%;
+
+   img {
+      position: absolute;
+      left: 20%;
+      top: 45%;
+
+      @media @tablet {
+         left: 0;
+      }
+
+      @media @phone {
+         display: none;
+      }
+   }
 }

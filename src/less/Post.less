@@ -1,17 +1,3 @@
-// .med-button {
-//    .orange-button();
-//    width: 10%;
-//    padding: 0;
-//    margin: 1%;
-// }
-
-// .small-button {
-//    .orange-button();
-//    width: 1%;
-//    padding: 0;
-//    margin: 1%;
-// }
-
 .post-div {
    // border: 1px solid white;
    width: 60%;
@@ -21,6 +7,7 @@
 
    .post-btn-div {
       display: flex;
+      justify-content: space-between;
       width: 25%;
 
       .post-btn {
@@ -28,9 +15,9 @@
          background: none;
          border: none;
          font-size: 1.5rem;
-         margin-left: 2%;
          cursor: pointer;
       }
+
    }
 
    .post-top-div {
@@ -64,5 +51,24 @@
    .post-div2 {
       margin-top: 2%;
       height: 30vh;
+   }
+}
+
+.post-and-back {
+   .customFlex();
+   height: 70vh;
+
+   img {
+      position: absolute;
+      left: 10%;
+      top: 45%;
+
+      @media @tablet {
+         left: 0;
+      }
+
+      @media @phone {
+         display: none;
+      }
    }
 }
