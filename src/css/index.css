@@ -468,3 +468,11 @@ button {
 .form-and-back-container .back-btn {
   left: 20%;
 }
+.form-btn {
+  background-color: orangered;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: none;
+  width: 100px;
+  cursor: pointer;
+}
