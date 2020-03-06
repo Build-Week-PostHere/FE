@@ -90,6 +90,7 @@ button {
 }
 .landing-CTA h3 {
   font-size: 2rem;
+  margin-top: 4%;
   top: 50%;
 }
 .landing-buttons {
@@ -382,6 +383,7 @@ button {
   padding: 2%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   align-items: center;
 }
 .saved-and-back .saved-div .saved-list h2 {
@@ -409,7 +411,6 @@ button {
   width: 200px;
   cursor: pointer;
 }
-
 .signup-container {
   height: 550px;
   justify-content: space-evenly;

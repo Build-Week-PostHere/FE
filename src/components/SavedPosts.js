@@ -21,12 +21,6 @@ const SavedPosts = ({ getPosts, posts, isFetching, error }) => {
       history.push('/home');
    }
 
-   const history = useHistory();
-
-   const handleBack = () => {
-      history.push('/home');
-   }
-
    return (
       <animated.div style={props}>
          <div className='saved-and-back'>
