@@ -1,6 +1,10 @@
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
-const userId = window.localStorage.getItem('id')
+export const userId = () => {
+   if (window.localStorage.getItem('id')) {
+      return window.localStorage.getItem('id')
+   }
+}
 
 export const GET_POSTS = 'GET_POSTS'
 export const GET_SUCCESS = 'GET_SUCCESS'
@@ -9,7 +13,7 @@ export const GET_FAIL = 'GET_FAIL'
 export const getPosts = () => dispatch => {
    dispatch({ type: GET_POSTS })
    axiosWithAuth()
-      .get(`/user/${userId}`)
+      .get(`/user/${userId()}`)
       .then(res => {
          console.log(res)
          dispatch({ type: GET_SUCCESS, payload: res.data })
@@ -27,7 +31,7 @@ export const GET_SPECIFIC_FAIL = 'GET_SPECIFIC_FAIL'
 export const getSpecific = (id) => dispatch => {
    dispatch({ type: GET_SPECIFIC_POST })
    axiosWithAuth()
-      .get(`/user/${userId}/post/${id}`)
+      .get(`/user/${userId()}/post/${id}`)
       .then(res => {
          // console.log(res.data)
          dispatch({ type: GET_SPECIFIC_SUCCESS, payload: res.data.post[0] })
@@ -50,7 +54,7 @@ export let newpostid
 export const addPost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .post(`/user/${userId}`, post)
+      .post(`/user/${userId()}`, post)
       .then(res => {
          // console.log(res.data)
          newpostid = res.data.post_id
@@ -69,7 +73,7 @@ export const addPost = (post) => dispatch => {
 export const editPost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .put(`/user/${userId}/post/${post.id}`, post)
+      .put(`/user/${userId()}/post/${post.id}`, post)
       .then(res => {
          // console.log(res.data)
          newpostid = post.id
@@ -88,7 +92,7 @@ export const editPost = (post) => dispatch => {
 export const deletePost = (post) => dispatch => {
    dispatch({ type: CRUD })
    axiosWithAuth()
-      .delete(`/user/${userId}/post/${post.id}`)
+      .delete(`/user/${userId()}/post/${post.id}`)
       .then(res => {
          // console.log(res)
          dispatch({ type: CRUD_SUCCESS })
