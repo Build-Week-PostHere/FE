@@ -265,6 +265,9 @@ button {
   margin-top: 2%;
   height: 30vh;
 }
+.post-div .post-link {
+  color: orangered;
+}
 .post-and-back {
   display: flex;
   flex-direction: row;
