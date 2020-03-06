@@ -28,12 +28,12 @@ const Subreddit = ({ getSubreddit, subreddit, subredditData, isFetching, error }
    }, [])
 
    const handleBack = e => {
-      history.pop();
+      history.push('/posts');
    }
 
    return (
       <animated.div style={props}>
-         <div>
+         <div className='subreddit-div'>
             <img className='back-btn' src={backButton} alt='Go Back' onClick={handleBack} />
             {isFetching ? <h2>Loading...</h2> : error ? <h2>Encountered Error</h2> :
                <p>
