@@ -27,6 +27,7 @@ export const loginReducer = (state = initialState, action) => {
             isFetching: true
          }
       case REGISTER_SUCCESS:
+         window.localStorage.removeItem('error')
          return {
             ...state,
             isFetching: false,
@@ -36,6 +37,7 @@ export const loginReducer = (state = initialState, action) => {
             first: true
          }
       case REGISTER_FAIL:
+         window.localStorage.setItem('error', true)
          return {
             ...state,
             isFetching: false,
