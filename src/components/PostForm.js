@@ -62,11 +62,13 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, first }) =>
 
    const handleBack = e => {
       e.preventDefault()
+      toggleEdit(false)
       history.push('/home');
    }
 
    const cancelEdit = e => {
       e.preventDefault()
+      history.push('/posts')
       window.location.reload()
    }
 
@@ -83,7 +85,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, first }) =>
                         <input type='text' name='post_title' placeholder='Write your title here.' value={post.post_title} onChange={handleChange} required /><br />
                         <textarea name='post_text' placeholder='Write your post here.' cols='50' rows='10' value={post.post_text} onChange={handleChange} required /><br />
                         <input type='submit' value={isEditing ? 'Edit Post' : 'Submit Post'} />
-                        {isEditing ? <button onClick={cancelEdit} className='form-btn'>Cancle</button> : ''}
+                        {isEditing ? <button onClick={cancelEdit} className='form-btn'>Cancel</button> : ''}
                      </form>
                   </div>
                }

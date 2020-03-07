@@ -9,6 +9,8 @@ import { useSpring, animated } from 'react-spring';
 
 import Header from './Header'
 import backButton from '../assets/backButton.svg'
+import editButton from '../assets/reddit-edit.png'
+import deleteButton from '../assets/reddit-delete.png'
 
 const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
    const props = useSpring({ config: { duration: 1000 }, ...{ opacity: 1, from: { opacity: 0 } } })
@@ -45,10 +47,10 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
                </div>
                <h1 className='post-h1'>Suggested Subreddit: <Link className='post-link' to={`/subreddit/${post_sub_reddit}`}>r/{post_sub_reddit}</Link></h1>
                <div className='post-top-div'>
-                  <h3>{dated}</h3>
+                  <h3 className='post-h3'>{dated}</h3>
                   <div className='post-btn-div'>
-                     <button className='post-btn update-btn' onClick={handleEdit} >Update</button>
-                     <button className='post-btn' onClick={handleDelete} >X</button>
+                     <img className='post-btn update-btn' src={editButton} alt='Edit' onClick={handleEdit} />
+                     <img className='post-btn delete-btn' src={deleteButton} alt='Delete' onClick={handleDelete} />
                   </div>
                </div>
                <div className='post-div1'><h3 >{post_title}</h3></div>
@@ -66,3 +68,7 @@ const mapStateToProps = state => (
 )
 
 export default connect(mapStateToProps, { getSpecific, toggleEdit, setPostToEdit, deletePost })(Post);
+
+
+// <button className='post-btn update-btn' onClick={handleEdit} >Update</button>
+//    <button className='post-btn' onClick={handleDelete} >X</button>
