@@ -29,7 +29,9 @@ const SignUp = ({ register, isFetching, regiError }) => {
       setPassMatch(false)
       if (member.password === confirmPass) {
          register(member)
-         history.push('/login')
+         setTimeout(() => {
+            regiError ? history.push('/login') : history.push('/register')
+         }, 1000)
          setPassMatch(false)
       } else {
          setPassMatch(true)
