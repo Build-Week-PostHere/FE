@@ -4,11 +4,12 @@ import { useHistory } from 'react-router-dom'
 
 import { addPost, editPost, newpostid } from '../actions/crudActions'
 import { toggleEdit } from '../actions/editActions'
+import { setFirst } from '../actions/loginActions'
 import { useSpring, animated } from 'react-spring';
 
 import backButton from '../assets/backButton.svg'
 
-const PostForm = ({ addPost, editPost, isEditing, postToEdit, error }) => {
+const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, first }) => {
    const props = useSpring({ config: { duration: 1000 }, ...{ opacity: 1, from: { opacity: 0 } } })
    const [post, setPost] = useState({
       post_title: '',
@@ -52,11 +53,12 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error }) => {
          } else {
             history.push(`/posts`)
          }
-      }, 5000)
+      }, first ? 5000 : 15000)
       setPost({
          post_title: '',
          post_text: ''
       });
+      setFirst()
    }
 
    const handleBack = e => {
@@ -96,7 +98,8 @@ const mapStateToProps = state => (
    {
       isEditing: state.editReducer.isEditing,
       postToEdit: state.editReducer.postToEdit,
-      error: state.crudReducer.error
+      error: state.crudReducer.error,
+      first: state.loginReducer.first
    }
 )
 
