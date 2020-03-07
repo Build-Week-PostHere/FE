@@ -224,25 +224,30 @@ button {
 }
 .post-div .post-btn-div {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 25%;
+  width: 12%;
+  height: 5vh;
 }
 .post-div .post-btn-div .post-btn {
-  color: orangered;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.post-div .post-btn-div .update-btn {
+  width: 35px;
+  height: 35px;
 }
 .post-div .post-top-div {
-  width: 95%;
-  margin: 0 auto;
+  width: 99%;
+  margin: 2% auto;
   display: flex;
   justify-content: space-between;
 }
-.post-div .post-top-div h3 {
+.post-div .post-top-div .post-h3 {
   font-size: 1.5rem;
   color: orangered;
+  margin: 0;
 }
 .post-div .post-div1,
 .post-div .post-div2 {
@@ -277,21 +282,6 @@ button {
   justify-content: center;
   align-items: center;
   height: 70vh;
-}
-.post-and-back img {
-  position: absolute;
-  left: 10%;
-  top: 45%;
-}
-@media (max-width: 1000px) {
-  .post-and-back img {
-    left: 0;
-  }
-}
-@media (max-width: 600px) {
-  .post-and-back img {
-    display: none;
-  }
 }
 .home-header {
   display: flex;

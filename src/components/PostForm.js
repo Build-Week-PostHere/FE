@@ -62,6 +62,7 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, first }) =>
 
    const handleBack = e => {
       e.preventDefault()
+      toggleEdit(false)
       history.push('/home');
    }
 

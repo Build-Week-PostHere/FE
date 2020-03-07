@@ -7,28 +7,34 @@
 
    .post-btn-div {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      width: 25%;
+      width: 12%;
+      height: 5vh;
 
       .post-btn {
-         color: orangered;
-         background: none;
-         border: none;
-         font-size: 1.5rem;
          cursor: pointer;
+         width: 40px;
+         height: 40px;
+      }
+
+      .update-btn {
+         width: 35px;
+         height: 35px;
       }
 
    }
 
    .post-top-div {
-      width: 95%;
-      margin: 0 auto;
+      width: 99%;
+      margin: 2% auto;
       display: flex;
       justify-content: space-between;
 
-      h3 {
+      .post-h3 {
          font-size: 1.5rem;
          color: orangered;
+         margin: 0;
       }
    }
 
@@ -67,18 +73,4 @@
 .post-and-back {
    .customFlex();
    height: 70vh;
-
-   img {
-      position: absolute;
-      left: 10%;
-      top: 45%;
-
-      @media @tablet {
-         left: 0;
-      }
-
-      @media @phone {
-         display: none;
-      }
-   }
 }
