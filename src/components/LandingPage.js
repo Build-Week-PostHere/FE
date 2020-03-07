@@ -22,7 +22,7 @@ const LandingPage = () => {
          <div className='landing-buttons'>
             <Link to='/login'><button className='land-btn'>Login</button></Link>
             <Link to='/register'><button className='land-btn'>Sign Up</button></Link>
-            <a href='https://hopeful-pike-6f8030.netlify.com/meettheteam'><button className='land-btn'>Learn More</button></a>
+            <a href=''><button className='land-btn'>Learn More</button></a>
          </div>
       </animated.div>
    );

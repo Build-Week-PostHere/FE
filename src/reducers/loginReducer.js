@@ -29,6 +29,7 @@ export const loginReducer = (state = initialState, action) => {
             ...state,
             isFetching: false,
             user: action.payload,
+            error: '',
             regiError: ''
          }
       case REGISTER_FAIL:
@@ -45,12 +46,14 @@ export const loginReducer = (state = initialState, action) => {
       case LOGIN_SUCCESS:
          window.localStorage.setItem('id', action.payload.id)
          window.localStorage.setItem('token', action.payload.token)
+         window.localStorage.setItem('tokenTwo', action.payload.token)
          return {
             ...state,
             id: action.payload.id,
             token: action.payload.token,
             isFetching: false,
-            error: ''
+            error: '',
+            regiError: ''
          }
       case LOGIN_FAIL:
          return {
@@ -61,6 +64,7 @@ export const loginReducer = (state = initialState, action) => {
       case LOGOUT:
          window.localStorage.removeItem('id')
          window.localStorage.removeItem('token')
+         window.localStorage.removeItem('tokenTwo')
          return {
             ...state
          }
