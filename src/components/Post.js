@@ -43,7 +43,7 @@ const Post = ({ post, getSpecific, toggleEdit, setPostToEdit, deletePost }) => {
                <div className='home-header'>
                   <Header />
                </div>
-               <h1 className='post-h1'>Suggested Subreddit: <Link className='post-link' to={`/subreddit/${post_sub_reddit}`}>{post_sub_reddit}</Link></h1>
+               <h1 className='post-h1'>Suggested Subreddit: <Link className='post-link' to={`/subreddit/${post_sub_reddit}`}>r/{post_sub_reddit}</Link></h1>
                <div className='post-top-div'>
                   <h3>{dated}</h3>
                   <div className='post-btn-div'>

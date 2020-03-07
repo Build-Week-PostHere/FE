@@ -43,3 +43,11 @@ export const logout = e => {
       type: LOGOUT
    }
 }
+
+export const FIRST = 'FIRST'
+
+export const setFirst = () => {
+   return {
+      type: FIRST
+   }
+}
