@@ -53,12 +53,11 @@ const PostForm = ({ addPost, editPost, isEditing, postToEdit, error, first }) =>
          } else {
             history.push(`/posts`)
          }
-      }, first ? 5000 : 15000)
+      }, 5000)
       setPost({
          post_title: '',
          post_text: ''
       });
-      setFirst()
    }
 
    const handleBack = e => {

@@ -5,8 +5,7 @@ import {
    LOGIN,
    LOGIN_SUCCESS,
    LOGIN_FAIL,
-   LOGOUT,
-   FIRST
+   LOGOUT
 } from '../actions/loginActions'
 
 const initialState = {
@@ -16,7 +15,6 @@ const initialState = {
    token: '',
    error: '',
    regiError: '',
-   first: false
 }
 
 export const loginReducer = (state = initialState, action) => {
@@ -27,6 +25,7 @@ export const loginReducer = (state = initialState, action) => {
             isFetching: true
          }
       case REGISTER_SUCCESS:
+         window.localStorage.setItem('first', true)
          window.localStorage.removeItem('error')
          return {
             ...state,
@@ -72,11 +71,6 @@ export const loginReducer = (state = initialState, action) => {
          window.localStorage.removeItem('tokenTwo')
          return {
             ...state
-         }
-      case FIRST:
-         return {
-            ...state,
-            first: false
          }
       default:
          return state
