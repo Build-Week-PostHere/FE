@@ -14,6 +14,11 @@ const SavedPosts = ({ getPosts, posts, isFetching, error }) => {
    const props = useSpring({ config: { duration: 1000 }, ...{ opacity: 1, from: { opacity: 0 } } })
    useEffect(() => {
       getPosts()
+      setTimeout(() => {
+         if (!posts) {
+            getPosts()
+         }
+      }, 7000)
    }, [])
    const history = useHistory()
 
